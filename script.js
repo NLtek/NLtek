@@ -1,42 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const aikaSlider = document.getElementById("aika");
-  const aikaArvo = document.getElementById("aikaArvo");
+document.getElementById("haku").addEventListener("click", () => {
+  const kaappiValinta = document.querySelector('input[name="jaakaappiSisalto"]:checked')?.value;
 
-  // Päivitetään liukusäätimen arvo näytölle reaaliaikaisesti
-  aikaSlider.addEventListener("input", function () {
-    aikaArvo.textContent = this.value;
-  });
+  let tuotteet = "";
+  let vaihtoehto = "";
 
-  // Kuunnellaan haun painiketta
-  document.getElementById("haku").addEventListener("click", () => {
-    // Selvitetään käyttääkö käyttäjä jääkaapin sisältöä
-    const kaappiValinta = document.querySelector('input[name="jaakaappiSisalto"]:checked')?.value;
+  if (kaappiValinta === "yes") {
+    tuotteet = document.getElementById("tuote").value.trim();
+  } else if (kaappiValinta === "no") {
+    vaihtoehto = document.querySelector('input[name="vaihtoehto"]:checked')?.value || "";
+  }
 
-    let tuotteet = "";
-    let vaihtoehto = "";
-    let aikaraja = "";
-    let allergiat = "";
+  // Nämä haetaan aina riippumatta kyllä/ei -valinnasta
+  const aikaraja = document.getElementById("aika").value;
+  const allergiat = document.getElementById("allergia").value.trim();
 
-    if (kaappiValinta === "yes") {
-      tuotteet = document.getElementById("tuote").value.trim();
-    } else if (kaappiValinta === "no") {
-      vaihtoehto = document.querySelector('input[name="vaihtoehto"]:checked')?.value || "";
-      aikaraja = document.getElementById("aika").value;
-      allergiat = document.getElementById("allergia").value.trim();
-    }
+  const vastaukset = {
+    kaytaKaapinSisaltoa: kaappiValinta,
+    tuotteet: tuotteet,
+    ruokatyyppi: vaihtoehto,
+    aikaraja: Number(aikaraja),
+    allergiat: allergiat
+  };
 
-    // Koostetaan kaikki tiedot yhteen objektiin
-    const vastaukset = {
-      kaytaKaapinSisaltoa: kaappiValinta,
-      tuotteet: tuotteet,
-      ruokatyyppi: vaihtoehto,
-      aikaraja: Number(aikaraja),
-      allergiat: allergiat
-    };
-
-    console.log("Tallennetut vastaukset:", vastaukset);
-
-    // Tässä kohtaa voidaan lähettää tiedot tekoälylle myöhemmin
-    // sendToAI(vastaukset);
-  });
+  console.log("Tallennetut vastaukset:", vastaukset);
 });
