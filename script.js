@@ -24,3 +24,13 @@ document.getElementById("haku").addEventListener("click", () => {
 
   console.log("Tallennetut vastaukset:", vastaukset);
 });
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
+
+async function handleRequest(request) {
+  const res = await fetch('https://tekoäly.api.url', request)
+  const newRes = new Response(res.body, res)
+  newRes.headers.set('Access-Control-Allow-Origin', '*')
+  return newRes
+}
