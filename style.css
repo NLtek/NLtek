@@ -1,202 +1,30 @@
-/* Reset ja perusasetus */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fafafa;
-  min-height: 100vh;
-  color: #1a1a1a;
-  line-height: 1.6;
-}
-
-/* Navigaatio */
-nav {
-  background-color: #333;
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-nav ul {
-  list-style: none;
+.valintavaihtoehdot {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   justify-content: center;
-  gap: 20px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-  padding: 0 20px;
-}
-
-/* Responsiivinen navigaatio */
-@media (max-width: 768px) {
-  #nav-lista {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    background-color: #333;
-    padding: 10px 0;
-  }
-
-  #nav-lista li {
-    margin: 10px 0;
-  }
-
-  #nav-lista.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-/* Header esim. taustakuvan kanssa */
-header {
-  background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1950&q=80');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  padding: 100px 20px 60px 20px;
-  text-align: center;
-}
-
-/* Logo */
-.logo {
-  display: block;
-  max-width: 600px;
-  width: 100%;
-  margin: 0 auto 20px;
-}
-
-/* Päälaatikko */
-.container {
-  background-color: #fff;
-  max-width: 700px;
-  width: 90%;
-  margin: 140px auto 40px auto;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-/* Otsikot */
-h1, h2, h3 {
-  color: #2e2e2e;
-  margin-bottom: 1rem;
-}
-
-/* Lomakekentät */
-input[type="text"],
-textarea {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  outline: none;
-  transition: border-color 0.3s;
-}
-
-input[type="text"]:focus,
-textarea:focus {
-  border-color: #ff6f61;
-}
-
-/* Nappi */
-button {
-  background-color: #ff6f61;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-button:hover {
-  background-color: #e4574f;
-  transform: scale(1.03);
-}
-
-/* Sovellusnappi */
-.sovellus {
-  display: inline-block;
-  background-color: #ffa500;
-  color: white;
-  padding: 10px 20px;
-  margin-top: 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.sovellus:hover {
-  background-color: #e07b00;
-}
-
-/* Tekoälyn vastaus */
-#vastaus {
-  background: #ffffff;
-  color: #1a1a1a;
-  border-left: 5px solid #ff6f61;
-  margin-top: 1.5rem;
-  padding: 1.5rem;
-  text-align: left;
-  border-radius: 10px;
-  white-space: pre-wrap;
-  font-family: 'Segoe UI', sans-serif;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  line-height: 1.6;
-  font-size: 16px;
-}
-
-#vastaus h3,
-#vastaus h2 {
-  color: #e4574f;
-  margin-bottom: 0.75rem;
-  font-size: 1.2rem;
-  border-bottom: 2px solid #ff6f61;
-  padding-bottom: 0.3rem;
-}
-
-#vastaus ul,
-#vastaus ol {
-  padding-left: 1.2rem;
   margin-top: 1rem;
 }
 
-#vastaus li {
-  margin-bottom: 0.5rem;
-  background: #fff7f6;
-  border: 1px solid #ffdcd6;
-  border-radius: 8px;
-  padding: 8px 12px;
+.valintavaihtoehdot input[type="radio"] {
+  display: none;
 }
 
-/* Responsiivisuus */
-@media (max-width: 600px) {
-  .container {
-    padding: 1.5rem;
-    margin: 100px 1rem 30px 1rem;
-  }
+.valintavaihtoehdot label {
+  background-color: #f4a261;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-weight: 500;
 }
+
+.valintavaihtoehdot input[type="radio"]:checked + label {
+  background-color: #e76f51;
+  transform: scale(1.05);
+}
+
+
+
+
