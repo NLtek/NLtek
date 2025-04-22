@@ -1,0 +1,87 @@
+/* Perustyyli koko sivulle */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Läpinäkyvä, siisti taustalaatikko keskelle */
+.container {
+  background-color: rgba(255, 255, 255, 0.95);
+  max-width: 700px;
+  margin: 100px auto;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Otsikko */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #2e2e2e;
+}
+
+/* Syöttökenttä */
+input[type="text"] {
+  width: 80%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #ff6f61;
+}
+
+/* Tyylikkäät napit */
+button {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #e4574f;
+  transform: scale(1.03);
+}
+
+/* Vastauslaatikko */
+#response {
+  background: #fdf3f2;
+  border-left: 5px solid #ff6f61;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  text-align: left;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-family: 'Courier New', monospace;
+}
+
+/* Responsiivisuus */
+@media (max-width: 600px) {
+  .container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+}
+
