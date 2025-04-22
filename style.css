@@ -1,20 +1,9 @@
-/* Perustyyli koko sivulle */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1950&q=80');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
-
-/* Läpinäkyvä, siisti taustalaatikko keskelle */
+/* Keskuslaatikko */
 .container {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #ffffff;
   max-width: 700px;
-  margin: 100px auto;
+  width: 100%;
+  margin: 120px auto 40px auto;
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
@@ -24,13 +13,14 @@ body {
 /* Otsikko */
 h1 {
   font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #2e2e2e;
+  margin-bottom: 1.5rem;
+  color: #222;
 }
 
 /* Syöttökenttä */
-input[type="text"] {
-  width: 80%;
+input[type="text"],
+textarea {
+  width: 100%;
   padding: 12px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -40,11 +30,12 @@ input[type="text"] {
   transition: border-color 0.3s;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+textarea:focus {
   border-color: #ff6f61;
 }
 
-/* Tyylikkäät napit */
+/* Napit */
 button {
   background-color: #ff6f61;
   color: white;
@@ -63,7 +54,8 @@ button:hover {
 
 /* Vastauslaatikko */
 #response {
-  background: #fdf3f2;
+  background: #ffffff;
+  color: #1a1a1a;
   border-left: 5px solid #ff6f61;
   margin-top: 1.5rem;
   padding: 1rem;
@@ -71,31 +63,14 @@ button:hover {
   border-radius: 8px;
   white-space: pre-wrap;
   font-family: 'Courier New', monospace;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  max-width: 100%;
 }
 
 /* Responsiivisuus */
 @media (max-width: 600px) {
   .container {
-    margin: 2rem 1rem;
     padding: 1.5rem;
-  }
-
-  input[type="text"] {
-    width: 100%;
+    margin: 100px 1rem 30px 1rem;
   }
 }
-textarea {
-  width: 80%;
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  resize: vertical;
-}
-* {
-  box-sizing: border-box;
-}
-
-
-
